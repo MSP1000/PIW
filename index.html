@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>scientia sciurus</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<header>
+    <img src="images/logo2.png" alt="Logo">
+    <h1 class="logotitle">Scientia Sciurus - Księgarnia Internetowa</h1>
+    <nav>
+        <button>Wyloguj się</button>
+        <button>Twój koszyk</button>
+        <button><a href="index2.html">Dodaj Pozycje</a></button>
+    </nav>
+</header>
+
+
+
+<div class="main-container">
+    <div class="filter-container">
+        <h2>Filtry</h2>
+        <label for="category">Kategoria:</label>
+        <select id="category">
+            <option value="wszystkie">Wszystkie</option>
+            <option value="historia">Historia</option>
+            <option value="programowanie">Programowanie</option>
+            <option value="literatura">Literatura</option>
+        </select>
+        <label for="author">Autor:</label>
+        <input type="text" id="author" placeholder="Wpisz autora...">
+		<label for="Title">Tytuł:</label>
+        <input type="text" id="Title" placeholder="Wpisz tytuł...">
+        <button>Filtruj</button>
+    </div>
+
+    <div class="item-list">
+        <div class="item">
+            <img src="images/bookcover1.png" alt="Obraz 1">
+            <div>
+                <h3>Historia Rzymu</h3>
+                <p>liczba stron: 893</p>
+                <p>Okładka: Twarda</p>
+                <p>Autor: Wydawnictwo: Roma Invicta</p>
+                <p>Wydawnictwo Roma Invicta prezentuje zbiór najnowszych badań poświęconych tematyce historii imperium rzymskiego, owoc pracy 20 weteranów tematyki i najnowszych odkryć archeologicznych związanych z his...</p>
+                <button class="buttonlist">Podgląd</button>
+                <button class="buttonlist">Dodaj do koszyka</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/bookcover2.png" alt="Obraz 1">
+            <div>
+                <h3>Assembler Poradnik</h3>
+                <p>liczba stron: 443</p>
+                <p>Okładka: Twarda</p>
+                <p>Autor: Jan Assem</p>
+                <p>Jan Asem znawca Assemblera udostępnia zwykłym śmiertelnikom najlepszy poradnik do nauki tego pięknego języka, dzięki wrodzonej elokwencji i geniuszowi autor przekazuje wiedzę w prosty i merytoryczny sposób...</p>
+                <button class="buttonlist">Podgląd</button>
+                <button class="buttonlist">Dodaj do koszyka</button>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/bookcover3.png" alt="Obraz 1">
+            <div>
+                <h3>Wielka Księga o Książkach</h3>
+                <p>liczba stron: 1893</p>
+                <p>Okładka: Twarda</p>
+                <p>Autor: Anna Książka</p>
+                <p>Marzenie każdego Bibliotekarza, Wielka księga zawiera spis wszystkich książek na ziemi, wraz z podziałem na kategorie, ten zbiór informacji ciężko było zmieścić w jednej książce, ale to jeszcze nie wszystko opr...</p>
+                <button class="buttonlist">Podgląd</button>
+                <button class="buttonlist">Dodaj do koszyka</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 scientia sciurus. Wszelkie prawa zastrzeżone.
+</footer>
+
+</body>
+</html>
