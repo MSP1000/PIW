@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj Książkę</title>
+	 <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+<header>
+    <img src="images/logo2.png" alt="Logo">
+	<h1 class="logotitle">Scientia Sciurus - Dodaj Książkę</h1>
+    <nav>
+        <button>Wyolguj się</button>
+        <button>twój koszyk</button>
+        <button>dodaj Pozycje</button>
+    </nav>
+</header>
+
+<div class="form-container">
+    <form>
+        <div class="form-group">
+            <label for="author">Autor:</label>
+            <input type="text" id="author" name="author" required>
+        </div>
+        <div class="form-group">
+            <label for="title">Tytuł:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+            <label for="pages">Liczba stron:</label>
+            <input type="number" id="pages" name="pages" required>
+        </div>
+        <div class="form-group">
+            <label for="cover-type">Rodzaj okładki:</label>
+            <select id="cover-type" name="cover-type" required>
+                <option value="twarda">Twarda</option>
+                <option value="miękka">Miękka</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="description">Opis:</label>
+            <textarea id="description" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="year">Rok wydania:</label>
+            <input type="number" id="year" name="year" required>
+        </div>
+        <button type="submit" class="submit-button">Dodaj Książkę</button>
+		 <button class="submit-button">Anuluj</button>
+    </form>
+</div>
+<footer>
+    &copy; 2025 scientia sciurus. Wszelkie prawa zastrzeżone.
+</footer>
+</body>
+</html>
