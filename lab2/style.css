@@ -1,0 +1,128 @@
+html, body {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #fff3e0; 
+    font-family: Arial, sans-serif;
+}
+
+#inputField {
+    width: calc(100% - 20px);
+    height: 50px;
+    border: 2px solid #ff9800; 
+    border-radius: 5px;
+    outline: none;
+    padding: 0 10px;
+    font-size: 24px;
+    transition: border-color 0.3s;
+}
+
+#inputField:focus {
+    border-color: #fb8c00; 
+}
+
+#todobutton {
+    height: 50px;
+    width: 100%;
+    border: none;
+    background-color: #ff9800; 
+    color: white;
+    font-size: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#todobutton:hover {
+    background-color: #fb8c00; 
+}
+
+#toDocontainter {
+    margin-top: 25px;
+}
+
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; 
+    border: 1px solid #ffcc80; 
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s;
+}
+
+.task-container:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.paragraphstyling {
+    margin: 0;
+    cursor: pointer;
+    font-size: 20px;
+    flex-grow: 1; 
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.datehour {
+    color: #ffb300; 
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+#confirmModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#searchField {
+    width: calc(100% - 20px);
+    height: 50px;
+    border: 2px solid #ff9800; 
+    border-radius: 5px;
+    outline: none;
+    padding: 0 10px;
+    font-size: 24px;
+    margin-top: 10px;
+    transition: border-color 0.3s;
+}
+
+#searchField:focus {
+    border-color: #fb8c00; 
+}
+
+#trashContainer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#restoreButton {
+    background-color: #ff9800; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#restoreButton:hover {
+    background-color: #fb8c00; 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+<h1 id="toggleHeader">Laboratorium 2</h1>
+  
+<div class="containter">
+    <input id="inputField" type="text" placeholder="Dodaj zadanie...">
+    <button id="todobutton">Dodaj</button>
+    <input id="searchField" type="text" placeholder="Szukaj zadania..."> <!-- Pole wyszukiwania -->
+    <div id="toDocontainter"></div>
+    <div id="trashContainer">
+        <button id="restoreButton">Przywróć ostatni element</button>
+    </div>
+</div>
+<div id="confirmModal" style="display:none;">
+    <div class="modal-content">
+        <p id="modalMessage"></p>
+        <button id="confirmDelete">Tak, usuń</button>
+        <button id="cancelDelete">Anuluj</button>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
