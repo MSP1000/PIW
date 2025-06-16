@@ -1,20 +1,101 @@
-// import { Outlet } from "react-router-dom"; boolshit xD
-import Navbar from "./components/Navbar";
-import { BookProvider } from "./context/BookContext";
 import {
+  isRouteErrorResponse,
+  Links,
+  Meta,
   Outlet,
   Scripts,
+  ScrollRestoration,
 } from "react-router";
-export default function Root() {
-  return (
-    <BookProvider>
-      <meta charSet="utf-8" />
-      <Navbar />
-      <main style={{ padding: "1rem" }}>
-        <Outlet />
-        <Scripts />
+import "./app.css";
+import Navbar from "./components/Navbar";
+import { BookProvider } from "./contexts/BookContext";
+import { AuthProvider } from './contexts/AuthContext';
+import { CartProvider } from './contexts/CartContext';
 
-      </main>
-    </BookProvider>
+export const links = () => [
+  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  {
+    rel: "preconnect",
+    href: "https://fonts.gstatic.com",
+    crossOrigin: "anonymous",
+  },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+  },
+];
+
+export function meta() {
+  return [
+    { title: "Księgarnia Scientia Sciurus" },
+    { name: "description", content: "Księgarnia internetowa Scientia Sciurus" },
+    { name: "keywords", content: "książki, księgarnia, scientia-sciurus, fantasy, literatura" },
+  ];
+}
+
+export function Layout({ children }) {
+  return (
+    <html lang="pl">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <AuthProvider>
+          <BookProvider>
+            <CartProvider>
+              <Navbar />
+              <main className="container mx-auto px-4 py-6">{children}</main>
+              <footer className="bg-green-800 text-white text-center py-4 mt-8">
+                <p>&copy; 2025 Księgarnia Scientia Sciurus. Wszelkie prawa zastrzeżone.</p>
+              </footer>
+              <ScrollRestoration />
+              <Scripts />
+            </CartProvider>
+          </BookProvider>
+        </AuthProvider>
+      </body>
+    </html>
+  );
+}
+
+export default function App() {
+  return <Outlet />;
+}
+
+export function ErrorBoundary({ error }) {
+  let message = "Ups! Coś poszło nie tak";
+  let details = "Wystąpił nieoczekiwany błąd.";
+  let stack;
+
+  if (isRouteErrorResponse(error)) {
+    message = error.status === 404 ? "404 - Nie znaleziono" : "Błąd";
+    details =
+      error.status === 404
+        ? "Strona, której szukasz, nie istnieje."
+        : error.statusText || details;
+  } else if (import.meta.env.DEV && error && error instanceof Error) {
+    details = error.message;
+    stack = error.stack;
+  }
+
+  return (
+    <main className="pt-16 p-4 container mx-auto text-center">
+      <h1 className="text-3xl font-bold text-green-800 mb-4">{message}</h1>
+      <p className="text-lg mb-6">{details}</p>
+      {stack && (
+        <pre className="w-full p-4 overflow-x-auto bg-gray-100 rounded">
+          <code>{stack}</code>
+        </pre>
+      )}
+      <a 
+        href="/" 
+        className="inline-block bg-green-700 text-white px-6 py-2 rounded hover:bg-green-800 transition"
+      >
+        Powrót do strony głównej
+      </a>
+    </main>
   );
 }

@@ -1,11 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router";
+import LoginButton from './LoginButton';
+import CartDropdown from './CartDropdown';
 
 export default function Navbar() {
   return (
-    <nav style={{ padding: "1rem", background: "#eee" }}>
-      <Link to="/" style={{ marginRight: "1rem" }}>Strona główna</Link>
-      <Link to="/new" style={{ marginRight: "1rem" }}>Dodaj książkę</Link>
-      <button style={{ float: "right" }}>Login</button>
-    </nav>
+    <header>
+      <nav className="navbar">
+        <div className="bookstore-name">
+          <h1><Link to="/">Księgarnia Scientia Sciurus</Link></h1>
+        </div>
+        <div className="nav-btns">
+          <CartDropdown />
+          <LoginButton />
+        </div>
+      </nav>
+    </header>
   );
 }
